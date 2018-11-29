@@ -13,6 +13,8 @@ class Ship():
         self.rect.bottom = self.screen_rect.bottom
         self.center = float(self.rect.centerx)
 
+        self.moving_up = False
+        self.moving_down = False
         self.moving_right = False
         self.moving_left = False
 
@@ -21,6 +23,7 @@ class Ship():
             self.center += self.ai_settings.ship_speed_factor
         if self.moving_left and self.rect.left > self.screen_rect.left:
             self.center -= self.ai_settings.ship_speed_factor
+
         self.rect.centerx = self.center
 
     def blitme(self):
